@@ -27,7 +27,8 @@ public class CharTriangle1 {
 		
 		for(int x=0;x<n;x++) {
 			for(int y=0;y<n;y++) {
-				sb.append(arr[x][y]+" ");
+				if(arr[x][y]==0) sb.append("  "); //character 초기화는 0이다. 0일경우 공백을 출력하고 한칸뛰기위함이다.
+				else sb.append(arr[x][y]+" ");
 			}
 			sb.setLength(sb.length()-1);
 			sb.append("\n");
