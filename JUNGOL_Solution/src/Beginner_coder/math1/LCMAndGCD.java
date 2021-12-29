@@ -15,14 +15,14 @@ public class LCMAndGCD {
 		for(int i=0;i<n;i++) {
 			arr[i]=Integer.parseInt(st.nextToken());
 		}
-		int gcd=arr[0],lcd=1,temp=1;
+		int gcd=arr[0],lcm=arr[0],temp=1;
 		for(int i=1;i<n;i++) {
-			temp=getGcd(gcd,arr[i]);
-			lcd*=arr[i];
+			gcd=getGcd(gcd,arr[i]);
+			lcm=lcm/getGcd(lcm,arr[i])*arr[i]; //lcm 수정으로 해결!
 		}
 		
 		System.out.println(gcd);
-		System.out.println(lcd/gcd);
+		System.out.println(lcm);
 	}
 
 	private static int getGcd(int i, int j) {
